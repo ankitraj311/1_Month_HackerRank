@@ -1,0 +1,170 @@
+Sure Ankit! Let's understand **vectors** in C++ in a clear and step-by-step manner with examples.
+
+---
+
+## 🔶 What is a Vector in C++?
+
+A **vector** is a dynamic array provided by the C++ Standard Template Library (STL). Unlike arrays, vectors can **grow and shrink** in size during runtime.
+
+You must include the header file:
+
+```cpp
+#include <vector>
+```
+
+---
+
+## 🔶 Basic Syntax
+
+```cpp
+std::vector<datatype> vector_name;
+```
+
+Example:
+
+```cpp
+std::vector<int> v;   // a vector of integers
+std::vector<string> names; // a vector of strings
+```
+
+---
+
+## 🔶 Important Functions with Examples
+
+### 1. **Push and Print**
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v;
+    
+    // Add elements using push_back
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+
+    // Print elements
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    return 0;
+}
+```
+
+🟡 Output:
+
+```
+10 20 30
+```
+
+---
+
+### 2. **Using `auto` with range-based for loop**
+
+```cpp
+for (auto x : v) {
+    cout << x << " ";
+}
+```
+
+---
+
+### 3. **Initialize Vector with Size and Value**
+
+```cpp
+vector<int> v(5, 100); // creates vector of size 5, all elements = 100
+```
+
+🟡 Output:
+
+```
+100 100 100 100 100
+```
+
+---
+
+### 4. **Accessing Elements**
+
+```cpp
+cout << v[0];        // direct access
+cout << v.at(1);     // bounds-checked access
+```
+
+---
+
+### 5. **Other Useful Functions**
+
+| Function       | Description                |
+| -------------- | -------------------------- |
+| `v.size()`     | returns number of elements |
+| `v.empty()`    | true if vector is empty    |
+| `v.front()`    | returns first element      |
+| `v.back()`     | returns last element       |
+| `v.pop_back()` | removes last element       |
+| `v.clear()`    | removes all elements       |
+
+---
+
+### 6. **Insert and Erase Elements**
+
+```cpp
+vector<int> v = {10, 20, 30, 40};
+
+v.insert(v.begin() + 2, 25); // Insert 25 at index 2
+v.erase(v.begin() + 1);      // Erase element at index 1
+```
+
+---
+
+### 7. **Sort a Vector**
+
+```cpp
+#include <algorithm>
+sort(v.begin(), v.end()); // Ascending sort
+```
+
+---
+
+### 8. **2D Vector (Vector of Vectors)**
+
+```cpp
+vector<vector<int>> matrix = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+cout << matrix[1][2];  // prints 6
+```
+
+---
+
+## 🔶 Real Example: Taking Input in Vector
+
+```cpp
+int n;
+cin >> n;
+vector<int> v(n);
+
+for (int i = 0; i < n; i++) {
+    cin >> v[i];
+}
+```
+
+---
+
+## ✅ Summary
+
+* `push_back(x)` – Add element to end
+* `v[i]` or `v.at(i)` – Access element
+* `v.size()` – Get number of elements
+* `insert`, `erase` – Modify contents
+* `clear()` – Empty vector
+* `vector<vector<int>>` – 2D vector
+
+---
+
+Let me know if you want me to teach **2D vectors**, **vector with objects**, or build a small **project using vectors**.
