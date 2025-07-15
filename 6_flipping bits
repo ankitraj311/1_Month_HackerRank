@@ -1,0 +1,42 @@
+#include <bitset>
+
+long flippingBits(long n) { // means number of time this function will run
+    
+   bitset<32> original(n);
+   bitset<32> flipped = ~original;
+   flipped.to_ulong();
+   return flipped.to_ulong();
+}
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+
+#include <iostream>
+#include <bitset>
+using namespace std;
+
+int main() {
+    int num;
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    // Step 1: Convert to 32-bit binary
+    bitset<32> binary(num);
+    cout << "Original 32-bit binary: " << binary << endl;
+
+    // Step 2: Take 1's complement
+    bitset<32> onesComplement = ~binary;
+    cout << "1's Complement:         " << onesComplement << endl;
+
+    // Step 3: Convert back to decimal (unsigned)
+    unsigned int result = onesComplement.to_ulong();
+    cout << "Decimal after 1's complement: " << result << endl;
+
+    return 0;
+}
+
+
+
+
